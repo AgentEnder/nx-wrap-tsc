@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "test-js-lib": "libs/test-js-lib",
+    "wrap-tsc": "libs/wrap-tsc",
+    "wrap-tsc-e2e": "apps/wrap-tsc-e2e"
+  }
 }

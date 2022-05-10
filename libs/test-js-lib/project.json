@@ -1,0 +1,32 @@
+{
+  "sourceRoot": "libs/test-js-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx-wrap-tsc/wrap-tsc:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/test-js-lib",
+        "main": "libs/test-js-lib/src/index.ts",
+        "tsConfig": "libs/test-js-lib/tsconfig.lib.json",
+        "assets": ["libs/test-js-lib/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/test-js-lib/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/test-js-lib"],
+      "options": {
+        "jestConfig": "libs/test-js-lib/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
